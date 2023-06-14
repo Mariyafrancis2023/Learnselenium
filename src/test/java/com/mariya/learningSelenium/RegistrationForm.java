@@ -53,7 +53,7 @@ public class RegistrationForm {
 		lastNameInput.sendKeys("Steve");
 
 		WebElement emailInput = wait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("#input-email")));
-		emailInput.sendKeys("stevetom2@email.com");
+		emailInput.sendKeys(randomEmail);
 
 		WebElement numberInput = wait
 				.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("#input-telephone")));
@@ -74,8 +74,7 @@ public class RegistrationForm {
 		WebElement continueButton = wait
 				.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("input[value='Continue']")));
 		continueButton.submit();
-
-		System.out.println(wd.getTitle());
+	
 		Assert.assertEquals(wd.getTitle(), "Your Account Has Been Created!", "You are on wrong page");
 	}
 
@@ -151,7 +150,7 @@ public class RegistrationForm {
 		lastNameInput.sendKeys("Steve");
 
 		WebElement email = wait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("#input-email")));
-		email.sendKeys("stevetom2emailcom");
+		email.sendKeys(randomEmail);
 		
 		WebElement numberInput = wait
 				.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("#input-telephone")));
@@ -350,6 +349,6 @@ public class RegistrationForm {
 
 	@AfterMethod
 	public void tearDown() {
-//		wd.close();
+		wd.close();
 	}
 }
