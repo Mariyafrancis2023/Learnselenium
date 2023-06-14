@@ -155,6 +155,6 @@ public class Registration {
 
 	@AfterMethod
 	public void tearDown() {
-	//	wd.close();
+		wd.close();
 	}
 }
